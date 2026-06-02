@@ -279,7 +279,7 @@ export default function AdminCRM({ onNavigateToHome }: AdminCRMProps) {
           <div className="text-center mb-8">
             <Scale className="text-amber-500 w-10 h-10 mx-auto mb-4 animate-pulse" />
             <h1 className="font-serif text-2xl font-bold tracking-tight text-white uppercase">Control de Acceso</h1>
-            <p className="text-slate-400 text-xs uppercase tracking-widest mt-2">Mentoría Penal Práctica — Dr. Méndez</p>
+            <p className="text-slate-400 text-xs uppercase tracking-widest mt-2">Curso de Capacitación Penal Práctica — Dr. Méndez</p>
           </div>
 
           <form onSubmit={handleLoginSubmit} className="space-y-6">
@@ -418,7 +418,7 @@ export default function AdminCRM({ onNavigateToHome }: AdminCRMProps) {
           </div>
 
           <div className="p-6 rounded-2xl bg-white/[0.01] border border-white/5">
-            <p className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-2">Mentorados Activos</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-2">alumnos Activos</p>
             <div className="flex items-baseline space-x-2">
               <span className="text-4xl font-serif font-bold text-green-400">{activeCount}</span>
               <span className="text-xs text-slate-500 font-mono">En Curso</span>
@@ -474,7 +474,7 @@ export default function AdminCRM({ onNavigateToHome }: AdminCRMProps) {
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-white/5 bg-black/20 text-xs tracking-wider uppercase font-mono text-slate-400">
-                      <th className="px-6 py-4">Socio Mentee</th>
+                      <th className="px-6 py-4">Socio Alumno</th>
                       <th className="px-6 py-4">Contacto Directo</th>
                       <th className="px-6 py-4">Vigencia Académica</th>
                       <th className="px-6 py-4">Estado</th>
@@ -579,7 +579,7 @@ export default function AdminCRM({ onNavigateToHome }: AdminCRMProps) {
                   <input
                     type="text"
                     required
-                    placeholder="Ej. mentoriamendez.mp"
+                    placeholder="Ej. Curso de Capacitaci�nmendez.mp"
                     value={aliasInput}
                     onChange={(e) => setAliasInput(e.target.value)}
                     className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-xl focus:border-amber-500/50 outline-none text-sm text-white transition-all font-mono"
@@ -642,7 +642,7 @@ export default function AdminCRM({ onNavigateToHome }: AdminCRMProps) {
 
       </main>
 
-      {/* Add mentee modal popup panel */}
+      {/* Add alumno modal popup panel */}
       <AnimatePresence>
         {isAddOpen && (
           <div className="fixed inset-0 bg-black/75 z-50 backdrop-blur-sm flex items-center justify-center p-6" id="add-student-overlay">
@@ -654,7 +654,7 @@ export default function AdminCRM({ onNavigateToHome }: AdminCRMProps) {
               id="add-student-modal animate"
             >
               <div className="flex items-center justify-between pb-4 border-b border-white/5 mb-6">
-                <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wider">Añadir Profesional Mentee</h3>
+                <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wider">Añadir Profesional Alumno</h3>
                 <button 
                   onClick={() => setIsAddOpen(false)}
                   className="p-1 rounded text-slate-400 hover:text-white hover:bg-white/5"
@@ -750,7 +750,7 @@ export default function AdminCRM({ onNavigateToHome }: AdminCRMProps) {
 
       {/* Admin Footer */}
       <footer className="border-t border-white/5 py-8 text-center text-[11px] text-slate-500">
-        &copy; {new Date().getFullYear()} Mentoría Penal Práctica — Panel CRM Privado del Dr. Luis Ángel Méndez. Acceso Protegido por Ley Penal.
+        &copy; {new Date().getFullYear()} Curso de Capacitación Penal Práctica — Panel CRM Privado del Dr. Luis Ángel Méndez. Acceso Protegido por Ley Penal.
       </footer>
 
     </div>

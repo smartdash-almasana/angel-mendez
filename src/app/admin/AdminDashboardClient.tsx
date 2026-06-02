@@ -346,7 +346,7 @@ export default function AdminDashboardClient({
                   <input
                     type="text"
                     required
-                    placeholder="Ej. mentoriamendez.mp"
+                    placeholder="Ej. capacithmendez.mp"
                     value={aliasInput}
                     onChange={(e) => setAliasInput(e.target.value)}
                     className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-xl focus:border-amber-500/50 outline-none text-sm text-white transition-all font-mono"
@@ -377,7 +377,7 @@ export default function AdminDashboardClient({
         <div className="fixed inset-0 bg-black/75 z-50 backdrop-blur-sm flex items-center justify-center p-6">
           <div className="w-full max-w-lg bg-zinc-900 border border-white/10 rounded-2xl p-8 relative shadow-2xl">
             <div className="flex items-center justify-between pb-4 border-b border-white/5 mb-6">
-              <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wider">Añadir Profesional Mentee</h3>
+              <h3 className="font-serif text-lg font-bold text-white uppercase tracking-wider">Añadir Profesional Alumno</h3>
               <button 
                 onClick={() => setIsAddOpen(false)}
                 className="p-1 rounded text-slate-400 hover:text-white"
@@ -466,7 +466,7 @@ export default function AdminDashboardClient({
 
       {/* Footer */}
       <footer className="border-t border-white/5 py-8 text-center text-[11px] text-slate-500">
-        &copy; {new Date().getFullYear()} Mentoría Penal Práctica — Panel CRM Privado.
+        &copy; {new Date().getFullYear()} Curso de Capacitación Penal Práctica — Panel CRM Privado.
       </footer>
     </div>
   );

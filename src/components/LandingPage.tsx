@@ -52,12 +52,12 @@ export default function LandingPage({ onNavigateToAdmin }: LandingPageProps) {
       return `https://link.mercadopago.com.ar/${settings.aliasMercadoPago}`;
     }
     // Fallback to inquiry support WhatsApp directly
-    return `https://wa.me/5491122334455?text=Hola,%20quiero%20inscribirme%20a%20la%20mentoría%20práctica%20del%20Dr.%20Méndez`;
+    return `https://wa.me/5491122334455?text=Hola,%20quiero%20inscribirme%20a%20la%20curso de capacitación%20práctica%20del%20Dr.%20Méndez`;
   };
 
   const handleConsultationSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = encodeURIComponent(`Hola Dr. Luis Ángel Méndez. Mi nombre es ${contactName}. Tengo una consulta sobre la Mentoría Penal Práctica: ${contactQuery}`);
+    const text = encodeURIComponent(`Hola Dr. Luis Ángel Méndez. Mi nombre es ${contactName}. Tengo una consulta sobre la Curso de Capacitación Penal Práctica: ${contactQuery}`);
     window.open(`https://wa.me/5491122334455?text=${text}`, '_blank');
   };
 
@@ -100,7 +100,7 @@ export default function LandingPage({ onNavigateToAdmin }: LandingPageProps) {
               <span className="font-serif tracking-wide text-lg font-bold text-amber-500" id="mendez-title">
                 Méndez <span className="text-slate-400 font-light font-sans text-sm tracking-normal">Legal</span>
               </span>
-              <span className="text-[9px] tracking-[0.25em] text-slate-500 uppercase font-mono">Mentoría Penal Práctica</span>
+              <span className="text-[9px] tracking-[0.25em] text-slate-500 uppercase font-mono">Curso de Capacitación Penal Práctica</span>
             </div>
           </div>
           
@@ -153,7 +153,7 @@ export default function LandingPage({ onNavigateToAdmin }: LandingPageProps) {
             className="font-serif text-5xl sm:text-6xl md:text-7xl font-light tracking-tight text-white mb-6 leading-[1.1]"
             id="hero-heading"
           >
-            Mentoría Penal Práctica <br />
+            Curso de Capacitación Penal Práctica <br />
             <span className="text-amber-500 italic font-normal">Dr. Ángel Méndez</span>
           </motion.h1>
 
@@ -187,7 +187,7 @@ export default function LandingPage({ onNavigateToAdmin }: LandingPageProps) {
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all shadow-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 hover:from-amber-400 hover:to-amber-500 hover:shadow-amber-500/20 active:scale-95 duration-200 group cursor-pointer"
                 id="main-cta-btn"
               >
-                <span>Suscribirse a la Mentoría</span>
+                <span>Suscribirse a la Curso de Capacitación</span>
                 <ArrowRight className="ml-2 w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
               </a>
             )}
@@ -233,7 +233,7 @@ export default function LandingPage({ onNavigateToAdmin }: LandingPageProps) {
       <section className="py-24 max-w-7xl mx-auto px-6" id="pilares">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-mono tracking-widest text-amber-500 uppercase font-bold">METODOLOGÍA DE ALTO IMPACTO</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold mt-2 mb-4 text-white">Ejes Clave de la Mentoría</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold mt-2 mb-4 text-white">Ejes Clave de la Curso de Capacitación</h2>
           <span className="w-16 h-0.5 bg-amber-500 block mx-auto mb-6" />
           <p className="text-slate-400 text-sm sm:text-base">
             Diseñamos un método dinámico enfocado en entregarte las herramientas técnicas que el ejercicio del Derecho Penal en Argentina exige para destacar en Tribunales.
@@ -312,7 +312,7 @@ export default function LandingPage({ onNavigateToAdmin }: LandingPageProps) {
           <span className="text-slate-800 font-serif text-9xl absolute -top-4 left-6 pointer-events-none select-none">“</span>
           
           <p className="font-serif text-lg md:text-xl text-slate-350 relative z-10 leading-relaxed mb-8 italic">
-            "En el Derecho Penal, el mínimo error procesal le cuesta la libertad a tu cliente. La mentoría práctica del Dr. Méndez provee ese entrenamiento bajo fuego que la universidad nunca te dió: aprender a reaccionar, recusar bases fiscales y consolidar una teoría del caso indestructible en audiencias orales reales."
+            "En el Derecho Penal, el mínimo error procesal le cuesta la libertad a tu cliente. La curso de capacitación práctica del Dr. Méndez provee ese entrenamiento bajo fuego que la universidad nunca te dió: aprender a reaccionar, recusar bases fiscales y consolidar una teoría del caso indestructible en audiencias orales reales."
           </p>
 
           <div className="mt-6 flex flex-col items-center">
@@ -374,7 +374,7 @@ export default function LandingPage({ onNavigateToAdmin }: LandingPageProps) {
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-xs tracking-wider uppercase bg-amber-500 hover:bg-amber-400 text-slate-950 hover:shadow-amber-500/20 active:scale-95 transition-all duration-200 cursor-pointer shadow-lg"
                   >
-                    <span>Suscribirse a la Mentoría</span>
+                    <span>Suscribirse a la Curso de Capacitación</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-2" />
                   </a>
                 )}
@@ -468,7 +468,7 @@ export default function LandingPage({ onNavigateToAdmin }: LandingPageProps) {
           </div>
 
           <p className="text-center md:text-left leading-relaxed max-w-md text-[9px] text-slate-500">
-            &copy; {new Date().getFullYear()} Mentoría Penal Práctica. Todos los derechos reservados. <br />
+            &copy; {new Date().getFullYear()} Curso de Capacitación Penal Práctica. Todos los derechos reservados. <br />
             Litigación penal y asesoramiento de alta complejidad. Acceso restringido • Servidores NeonDB.
           </p>
 

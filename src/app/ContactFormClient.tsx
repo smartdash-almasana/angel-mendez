@@ -8,7 +8,7 @@ export default function ContactFormClient() {
 
   const handleConsultationSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = encodeURIComponent(`Hola Dr. Luis Ángel Méndez. Mi nombre es ${contactName}. Tengo una consulta sobre la Mentoría Penal Práctica: ${contactQuery}`);
+    const text = encodeURIComponent(`Hola Dr. Luis Ángel Méndez. Mi nombre es ${contactName}. Tengo una consulta sobre el Curso de Capacitación Penal Práctica: ${contactQuery}`);
     window.open(`https://wa.me/5491138641863?text=${text}`, '_blank');
   };
 

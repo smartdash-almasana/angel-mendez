@@ -416,7 +416,7 @@ export default async function Page() {
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary px-10 py-4 text-sm sm:text-base inline-flex items-center justify-center gap-3"
-              aria-label="Empezar mi mentoría penal práctica"
+              aria-label="Empezar mi curso de capacitación penal práctica"
             >
               <span>EMPEZAR MI CURSO</span>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
