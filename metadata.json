@@ -1,0 +1,8 @@
+{
+  "name": "Mentoría Penal Práctica",
+  "description": "Sistema web de suscripciones y administración de matriculados destinado a la mentoría penal práctica del estudio jurídico del Dr. Luis Ángel Méndez.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
