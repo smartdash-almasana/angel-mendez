@@ -50,11 +50,11 @@ export default function HomePage({ onNavigateToCurso }: HomePageProps) {
               <div className="text-gold opacity-80 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="14" y1="2" x2="14" y2="26" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round"/>
-                  <line x1="4" y1="6" x2="24" y2="6" stroke="#D4AF37" stroke-width="1.5" strokeLinecap="round"/>
-                  <path d="M4 6 L1 13 Q4 16 7 13 Z" stroke="#D4AF37" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
-                  <path d="M24 6 L21 13 Q24 16 27 13 Z" stroke="#D4AF37" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+                  <line x1="4" y1="6" x2="24" y2="6" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M4 6 L1 13 Q4 16 7 13 Z" stroke="#D4AF37" strokeWidth="1.2" fill="none" strokeLinejoin="round"/>
+                  <path d="M24 6 L21 13 Q24 16 27 13 Z" stroke="#D4AF37" strokeWidth="1.2" fill="none" strokeLinejoin="round"/>
                   <circle cx="14" cy="6" r="1.5" fill="#D4AF37"/>
-                  <line x1="10" y1="26" x2="18" y2="26" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="10" y1="26" x2="18" y2="26" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
               </div>
               <div>

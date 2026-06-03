@@ -49,7 +49,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-slate-950 min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: '#0A0F1C' }}>
       {view === 'home' && (
         <HomePage onNavigateToCurso={() => handleNavigate('landing')} />
       )}
