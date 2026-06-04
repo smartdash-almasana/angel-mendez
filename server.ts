@@ -27,15 +27,13 @@ async function startServer() {
   const requireAdminAuth = (req: express.Request, res: express.Response, next: express.NextFunction) => {
     const authHeader = req.headers.authorization;
     if (!authHeader) {
-      res.setHeader('WWW-Authenticate', 'Basic realm="Panel Administrativo Dr. Mendez"');
-      return res.status(401).send('Se requiere autenticación para acceder al panel administrativo.');
+      return res.status(401).json({ error: 'Se requiere autenticación para acceder al panel administrativo.' });
     }
 
     try {
       const authHeaderParts = authHeader.split(' ');
       if (authHeaderParts.length !== 2 || authHeaderParts[0].toLowerCase() !== 'basic') {
-        res.setHeader('WWW-Authenticate', 'Basic realm="Panel Administrativo Dr. Mendez"');
-        return res.status(401).send('Formato de autenticación inválido.');
+        return res.status(401).json({ error: 'Formato de autenticación inválido.' });
       }
 
       const decoded = Buffer.from(authHeaderParts[1], 'base64').toString('utf-8');
@@ -47,8 +45,7 @@ async function startServer() {
       if (username === expectedUser && password === expectedPass) {
         return next();
       } else {
-        res.setHeader('WWW-Authenticate', 'Basic realm="Panel Administrativo Dr. Mendez"');
-        return res.status(401).send('Usuario o contraseña incorrectos.');
+        return res.status(401).json({ error: 'Usuario o contraseña incorrectos.' });
       }
     } catch (e) {
       return res.status(400).send('Error durante el proceso de autenticación.');
