@@ -7,7 +7,7 @@ import {
   addSubscriber,
   deleteSubscriber,
   isPrismaActive
-} from '../../server/db.js';
+} from '../server/db.js';
 
 const app = express();
 app.use(express.json());
