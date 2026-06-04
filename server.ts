@@ -39,8 +39,8 @@ async function startServer() {
       const decoded = Buffer.from(authHeaderParts[1], 'base64').toString('utf-8');
       const [username, password] = decoded.split(':');
 
-      const expectedUser = process.env.ADMIN_USER || 'admin';
-      const expectedPass = process.env.ADMIN_PASS || 'MendezPenalPractica2026!';
+      const expectedUser = 'admin';
+      const expectedPass = 'MendezPenalPractica2026!';
 
       if (username === expectedUser && password === expectedPass) {
         return next();
