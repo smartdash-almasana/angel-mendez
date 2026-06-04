@@ -9,7 +9,8 @@ import {
   toggleSubscriberStatus,
   addSubscriber,
   deleteSubscriber,
-  isPrismaActive
+  isPrismaActive,
+  getDbDiagnostics
 } from './server/db.js';
 
 // Setup file/dir names since we are in ES Module scope
@@ -60,9 +61,11 @@ async function startServer() {
   app.get('/api/settings', async (req, res) => {
     try {
       const settings = await getSettings();
+      const diag = getDbDiagnostics();
       res.json({
         ...settings,
-        isPrismaActive: isPrismaActive()
+        isPrismaActive: isPrismaActive(),
+        ...diag
       });
     } catch (err) {
       console.error("API error getting settings:", err);
@@ -72,7 +75,8 @@ async function startServer() {
 
   // Admin Verification route (allows frontend to prompt authenticating or verification and save credentials)
   app.get('/api/admin/verify', requireAdminAuth, (req, res) => {
-    res.json({ verified: true, isPrismaActive: isPrismaActive() });
+    const diag = getDbDiagnostics();
+    res.json({ verified: true, isPrismaActive: isPrismaActive(), ...diag });
   });
 
   // Secure API route to update Settings

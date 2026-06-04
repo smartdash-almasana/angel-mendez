@@ -51,26 +51,54 @@ let mockSettings: Settings = {
   aliasMercadoPago: "mentoriamendez.mp"
 };
 
-// Lazy initialization of Prisma client
+// Safe diagnostics (never exposes DATABASE_URL value)
+export interface DbDiagnostics {
+  hasDatabaseUrl: boolean;
+  prismaError: string | null;
+  initialized: boolean;
+}
+
+let dbDiagnostics: DbDiagnostics = {
+  hasDatabaseUrl: false,
+  prismaError: null,
+  initialized: false,
+};
+
+// Lazy initialization of Prisma client (one attempt, no retry after failure)
 let prisma: PrismaClient | null = null;
 let isPrismaAvailable = false;
+let initAttempted = false;
 
 function getPrisma(): PrismaClient {
-  if (!prisma) {
-    const hasUrl = process.env.DATABASE_URL && !process.env.DATABASE_URL.includes("user:password");
+  if (!prisma && !initAttempted) {
+    initAttempted = true;
+    const rawUrl = process.env.DATABASE_URL;
+    const hasUrl = !!(rawUrl && !rawUrl.includes("user:password"));
+    dbDiagnostics.hasDatabaseUrl = hasUrl;
     if (hasUrl) {
       try {
         prisma = new PrismaClient();
         isPrismaAvailable = true;
+        dbDiagnostics.initialized = true;
       } catch (err) {
-        console.warn("Prisma failed to initialize, falling back to memory database:", err);
+        const message = err instanceof Error ? err.message : String(err);
+        console.warn("Prisma failed to initialize, falling back to memory database:", message);
+        dbDiagnostics.prismaError = message;
         isPrismaAvailable = false;
       }
     } else {
+      dbDiagnostics.prismaError = rawUrl
+        ? "DATABASE_URL contains placeholder (user:password)"
+        : "DATABASE_URL is not set";
       isPrismaAvailable = false;
     }
   }
   return prisma as PrismaClient;
+}
+
+export function getDbDiagnostics(): DbDiagnostics {
+  if (!initAttempted) getPrisma();
+  return { ...dbDiagnostics };
 }
 
 // Safe database operation wrappers

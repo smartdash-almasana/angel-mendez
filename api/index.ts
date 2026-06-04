@@ -6,7 +6,8 @@ import {
   toggleSubscriberStatus,
   addSubscriber,
   deleteSubscriber,
-  isPrismaActive
+  isPrismaActive,
+  getDbDiagnostics
 } from '../server/db.js';
 
 const app = express();
@@ -48,7 +49,8 @@ const requireAdminAuth = (req: express.Request, res: express.Response, next: exp
 app.get('/api/settings', async (_req, res) => {
   try {
     const settings = await getSettings();
-    res.json({ ...settings, isPrismaActive: isPrismaActive() });
+    const diag = getDbDiagnostics();
+    res.json({ ...settings, isPrismaActive: isPrismaActive(), ...diag });
   } catch (err) {
     console.error('API error getting settings:', err);
     res.status(500).json({ error: 'Error del servidor al obtener la configuración' });
@@ -57,7 +59,8 @@ app.get('/api/settings', async (_req, res) => {
 
 // ── Admin verification ────────────────────────────────────────────────────
 app.get('/api/admin/verify', requireAdminAuth, (_req, res) => {
-  res.json({ verified: true, isPrismaActive: isPrismaActive() });
+  const diag = getDbDiagnostics();
+  res.json({ verified: true, isPrismaActive: isPrismaActive(), ...diag });
 });
 
 // ── Settings (admin) ─────────────────────────────────────────────────────
